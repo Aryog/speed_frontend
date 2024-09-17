@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
 			<ul className="flex-grow overflow-y-auto space-y-2 p-2">
 				<NavItem icon={Users} text="Personal team" className="bg-gray-700 text-white" href="/personal_team" />
 				<NavItem icon={TrendingUp} text="Upgrade" className="bg-gradient-to-r from-purple-500 to-blue-500 text-white mt-2" href="/upgrade" />
-				<NavItem icon={LayoutDashboard} text="Dashboard" className="text-white" href="/dashboard" />
+				<NavItem icon={LayoutDashboard} text="Dashboard" className="text-white" href="/" />
 				<NavItem icon={BarChart2} text="Stats" className="text-white" href="/stats" />
 				<NavItem icon={Bell} text="Notifications" className="text-white" href="/notifications" />
 				<NavItem icon={Settings} text="Settings" className="text-white" href="/settings/" />
