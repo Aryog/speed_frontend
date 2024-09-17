@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
 				<NavItem icon={LayoutDashboard} text="Dashboard" className="text-white" href="/dashboard" />
 				<NavItem icon={BarChart2} text="Stats" className="text-white" href="/stats" />
 				<NavItem icon={Bell} text="Notifications" className="text-white" href="/notifications" />
-				<NavItem icon={Settings} text="Settings" className="text-white" href="/settings" />
+				<NavItem icon={Settings} text="Settings" className="text-white" href="/settings/" />
 				<NavItem icon={FileText} text="Docs" className="text-white" href="/docs" />
 				<NavItem icon={HelpCircle} text="Support" className="text-white" href="/support" />
 			</ul>
