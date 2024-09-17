@@ -3,7 +3,7 @@ import { Bell, Search, ChevronDown } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Input, InputProps } from '@/components/ui/input';
 
 const StatCard = ({ title, value, icon }: any) => (
 	<Card className="bg-zinc-900 text-white">
@@ -46,13 +46,20 @@ const DRPCDashboard = () => {
 			<p className="text-zinc-400 mb-4">Secure access to our services, simplifying integration for your applications</p>
 
 			<div className="flex gap-4 mb-6">
-				<Input
+				{/* <Input
 					{...{
 						className: "flex-grow bg-zinc-900 border-zinc-700 text-white",
 						placeholder: "Search",
 						startAdornment: <Search className="text-zinc-400" />
 					}}
-				/>
+				/> */}
+				<div className="relative flex-grow">
+  					<Input
+    					className="w-full bg-zinc-900 border-zinc-700 text-white pl-10"
+    					placeholder="Search"
+  					/>
+  					<Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zinc-400" />
+				</div>
 				<Button variant="outline" className="border-zinc-700 text-black">
 					Filter <ChevronDown className="ml-2" />
 				</Button>

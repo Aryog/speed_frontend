@@ -1,12 +1,15 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import "../app/globals.css";
+import Navbar from '@/components/nav/navbar';
 
 const PersonalTeam = () => {
 	return (<>
 		{/* Main content */}
+		<div className="flex h-screen bg-gray-900 text-white">
+      		<Navbar />
 		<main className="flex-1 p-8">
 			<div className="mb-8">
 				<ul className="flex space-x-4">
@@ -67,6 +70,7 @@ const PersonalTeam = () => {
 				</CardContent>
 			</Card>
 		</main>
+		</div>
 	</>);
 
 }

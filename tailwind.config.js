@@ -7,7 +7,8 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/lib/**/*.{js,ts,jsx,tsx,mdx}',
     // Add this line for shadcn/ui components
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+	'./@/**/*.{ts,tsx,js,jsx}'
   ],
   theme: {
   	extend: {
