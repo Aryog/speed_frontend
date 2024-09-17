@@ -1,0 +1,76 @@
+"use client"
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import {
+	Users,
+	TrendingUp,
+	LayoutDashboard,
+	BarChart2,
+	Bell,
+	Settings,
+	FileText,
+	HelpCircle,
+	DollarSign,
+	ChevronLeft,
+	ChevronRight
+} from 'lucide-react';
+
+// Define the types for NavItem props
+type NavItemProps = {
+	icon: React.ElementType; // Use React.ElementType to accept any React component (like icons)
+	text: string;
+	className?: string;
+};
+
+const Navbar: React.FC = () => {
+	const [isMinimized, setIsMinimized] = useState(false);
+
+	const toggleMinimized = () => {
+		setIsMinimized(!isMinimized);
+	};
+
+	const NavItem: React.FC<NavItemProps> = ({ icon: Icon, text, className = '' }) => (
+		<li className={`${isMinimized ? 'justify-center items-center' : 'p-4'} ${className} rounded-lg flex items-center cursor-pointer`}>
+			{/* Wrap the icon with a span to handle className */}
+			<span className={isMinimized ? '' : 'mr-2'}>
+				<Icon size={20} />
+			</span>
+			{!isMinimized && <span>{text}</span>}
+		</li>
+	);
+
+	return (
+		<nav className={`${isMinimized ? 'w-24' : 'w-64'} bg-gray-800 p-4 flex flex-col h-full transition-all duration-300`}>
+			<div className="mb-8 flex items-center justify-between">
+				{!isMinimized && <h1 className="text-2xl font-bold text-white">🚀 speedRPC</h1>}
+				<Button
+					variant="ghost"
+					size="icon"
+					onClick={toggleMinimized}
+					className="text-white hover:bg-gray-700"
+				>
+					{isMinimized ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+				</Button>
+			</div>
+			<ul className="space-y-2 flex-grow">
+				<NavItem icon={Users} text="Personal team" className="bg-gray-700 text-white" />
+				<NavItem icon={TrendingUp} text="Upgrade" className="bg-gradient-to-r from-purple-500 to-blue-500 text-white" />
+				<NavItem icon={LayoutDashboard} text="Dashboard" className="text-white" />
+				<NavItem icon={BarChart2} text="Stats" className="text-white" />
+				<NavItem icon={Bell} text="Notifications" className="text-white" />
+				<NavItem icon={Settings} text="Settings" className="text-green-400" />
+				<NavItem icon={FileText} text="Docs" className="text-white" />
+				<NavItem icon={HelpCircle} text="Support" className="text-white" />
+			</ul>
+			<div className="mt-auto pt-4">
+				<Button className={`${isMinimized ? 'p-2' : 'w-full'} bg-green-500 hover:bg-green-600 text-white flex items-center justify-center`}>
+					<DollarSign size={20} className={isMinimized ? '' : 'mr-2'} />
+					{!isMinimized && 'Recommend us'}
+				</Button>
+			</div>
+		</nav>
+	);
+};
+
+export default Navbar;
+
