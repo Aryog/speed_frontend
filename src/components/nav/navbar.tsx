@@ -33,14 +33,14 @@ const Navbar: React.FC = () => {
 
 	const NavItem: React.FC<NavItemProps & { href: string }> = ({ icon: Icon, text, className = '', href }) => (
 		<Link href={href}>
-		  <li className={`flex items-center p-2 transition-all duration-300 ${className} ${isMinimized ? 'justify-center' : 'pl-4 pr-4'} rounded-lg cursor-pointer`}>
-			<span className={`transition-all duration-300 ${isMinimized ? 'mr-0' : 'mr-3'}`}>
-			  <Icon size={20} />
-			</span>
-			{!isMinimized && <span className="whitespace-nowrap">{text}</span>}
-		  </li>
+			<li className={`flex items-center p-2 transition-all duration-300 ${className} ${isMinimized ? 'justify-center' : 'pl-4 pr-4'} rounded-lg cursor-pointer`}>
+				<span className={`transition-all duration-300 ${isMinimized ? 'mr-0' : 'mr-3'}`}>
+					<Icon size={20} />
+				</span>
+				{!isMinimized && <span className="whitespace-nowrap">{text}</span>}
+			</li>
 		</Link>
-	  );	  
+	);
 
 	return (
 		<nav className={`${isMinimized ? 'w-20' : 'w-64'} bg-gray-800 h-full flex flex-col transition-all duration-300`}>
@@ -59,10 +59,10 @@ const Navbar: React.FC = () => {
 				</Button>
 			</div>
 			{/* Scrollable Content Section */}
-			<ul className="flex-grow overflow-y-auto space-y-2 p-2">
+			<ul className="flex-grow space-y-2 p-2">
 				<NavItem icon={Users} text="Personal team" className="bg-gray-700 text-white" href="/personal_team" />
 				<NavItem icon={TrendingUp} text="Upgrade" className="bg-gradient-to-r from-purple-500 to-blue-500 text-white mt-2" href="/upgrade" />
-				<NavItem icon={LayoutDashboard} text="Dashboard" className="text-white" href="/" />
+				<NavItem icon={LayoutDashboard} text="Dashboard" className="text-white" href="/dashboard" />
 				<NavItem icon={BarChart2} text="Stats" className="text-white" href="/stats" />
 				<NavItem icon={Bell} text="Notifications" className="text-white" href="/notifications" />
 				<NavItem icon={Settings} text="Settings" className="text-white" href="/settings/" />
@@ -72,12 +72,12 @@ const Navbar: React.FC = () => {
 
 			{/* Footer Section */}
 			<div className="p-4">
-			<Link href="/recommend">
-				<Button className={`flex items-center justify-center bg-green-500 hover:bg-green-600 text-white ${isMinimized ? 'p-2' : 'w-full'}`}>
-				<DollarSign size={20} className={isMinimized ? '' : 'mr-2'} />
-				{!isMinimized && 'Recommend us'}
-				</Button>
-			</Link>
+				<Link href="/recommend">
+					<Button className={`flex items-center justify-center bg-green-500 hover:bg-green-600 text-white ${isMinimized ? 'p-2' : 'w-full'}`}>
+						<DollarSign size={20} className={isMinimized ? '' : 'mr-2'} />
+						{!isMinimized && 'Recommend us'}
+					</Button>
+				</Link>
 			</div>
 		</nav>
 	);

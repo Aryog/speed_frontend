@@ -33,18 +33,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-  // return (
-  //   <html lang="en">
-  //     <body
-  //       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-  //     >
-  //       <div className="flex h-screen bg-gray-900 text-white">
-  //         <Navbar />
-  //         <div className="flex-1">
-  //           {children} {/* All page components will be rendered here */}
-  //         </div>
-  //       </div>
-  //     </body>
-  //   </html>
-  // );
 }

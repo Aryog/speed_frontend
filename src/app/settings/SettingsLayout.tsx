@@ -1,16 +1,15 @@
+"use client";
 import React from 'react';
-import { useRouter } from 'next/router';
+import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
-import Navbar from '@/components/nav/navbar';
-
-const SettingsLayout = ({ children }) => {
+import Page from '@/components/skeleton/Page';
+const SettingsLayout = ({ children }: any) => {
   const router = useRouter();
-
-  const isActive = (path) => router.pathname === `/settings/${path}`;
+  const pathname = usePathname();
+  const isActive = (path: String) => pathname === `/settings/${path}`;
 
   return (
-    <div className="flex h-screen bg-gray-900 text-white">
-      <Navbar />
+    <Page>
       <div className="flex-grow bg-black text-white min-h-screen p-6">
         <div className="max-w-3xl mx-auto">
           <nav className="flex space-x-4 mb-6">
@@ -48,7 +47,7 @@ const SettingsLayout = ({ children }) => {
           {children}
         </div>
       </div>
-    </div>
+    </Page>
   );
 };
 
